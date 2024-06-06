@@ -1,0 +1,15 @@
+<%-include("partials/header");-%>
+<h1>Post List</h1>
+<ul>
+<% posts.forEach(function(post){%>
+    <form action="/delete" method="post">
+        <div class="postlist">
+            <li class="deletepostlist"><%=post.title%></li>
+            <button type="submit" name="deleteButton" class="post-delete-button" value="<%=post._id%>"><i class="bin"></i></button>
+        </div>
+
+    </form>
+
+<%})%>
+</ul>
+<%-include("partials/footer") ;-%>
